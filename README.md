@@ -1,11 +1,6 @@
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/logo.svg">
-    <img src="assets/logo-light.svg" alt="ComboLive" width="380">
-  </picture>
+  <img src="assets/readme-banner.png" alt="ComboLive: todo tu directo en un combo" width="100%">
 </p>
-
-<h3 align="center">Todo tu directo en un combo</h3>
 
 <p align="center">
   Alertas · Tops · Interacciones · Metas para <b>TikTok LIVE</b>, <b>Kick</b> y <b>Twitch</b>.<br>
@@ -23,7 +18,7 @@
 </p>
 
 <p align="center">
-  <img src="assets/og.png" alt="ComboLive: alertas, tops e interacciones para tus directos" width="760">
+  <img src="assets/screens/panel.png" alt="Panel de ComboLive con el editor de alertas y su vista previa" width="860">
 </p>
 
 ---

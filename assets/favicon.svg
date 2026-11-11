@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-labelledby="t">
-  <title id="t">ComboLive</title>
-  <defs><linearGradient id="g" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="32" y2="32"><stop offset="0" stop-color="#7a6bff"/><stop offset="1" stop-color="#ff5fd0"/></linearGradient></defs>
-  <rect width="32" height="32" rx="7" fill="url(#g)"/>
-  <g transform="translate(1.6 1.6) scale(.9)"><g transform="translate(0 .6)"><g stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3.4 L25.6 9.4 L15 15.4 L4.4 9.4 Z" fill="#ffffff"/><path d="M4.4 14.8 L15 20.8 L25.6 14.8" fill="none"/><path d="M4.4 20.2 L15 26.2 L25.6 20.2" fill="none"/><path transform="translate(24.2 7.2)" d="M0,-4.6 Q1,-1 4.6,0 Q1,1 0,4.6 Q-1,1 -4.6,0 Q-1,-1 0,-4.6Z" fill="#ffffff" stroke-width="0.4"/></g></g></g>
-</svg>
