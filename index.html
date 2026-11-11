@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ComboLive · Alertas, tops y combos para tus directos en Windows</title>
+<meta name="description" content="Overlays para OBS que reaccionan en tiempo real a TikTok LIVE, Kick y Twitch: alertas, rankings, metas, contadores e interacciones con editor visual. Para Windows 10/11, se actualiza sola.">
+<meta name="theme-color" content="#12131a">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="ComboLive: alertas, tops y combos para tu directo">
+<meta property="og:description" content="Overlays para OBS que reaccionan en vivo a TikTok LIVE, Kick y Twitch. Editor visual sin código. Para Windows 10/11.">
+<meta property="og:image" content="assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ComboLive: alertas, tops y combos para tu directo">
+<meta name="twitter:description" content="Overlays para OBS que reaccionan en vivo a TikTok LIVE, Kick y Twitch. Para Windows 10/11.">
+<meta name="twitter:image" content="assets/og.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"ComboLive","applicationCategory":"MultimediaApplication","operatingSystem":"Windows 10, Windows 11 (64 bits)","inLanguage":"es","description":"Overlays para OBS con alertas, rankings, metas, contadores e interacciones para directos de TikTok LIVE, Kick y Twitch. Editor visual sin código.","downloadUrl":"https://github.com/FARS1803/combolive/releases/latest"}
+</script>
+<script>
+/* Marca html.js (para reveals) y html.reduce (movimiento reducido) antes de pintar */
+(function(d){var c=d.documentElement.classList;c.add('js');if(matchMedia('(prefers-reduced-motion: reduce)').matches)c.add('reduce')})(document);
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&amp;display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&amp;display=swap"></noscript>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8a7cff"/><stop offset="1" stop-color="#ff5fd0"/></linearGradient>
+    <symbol id="i-dl" viewBox="0 0 24 24"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 17h12l-1.6-2.2V10a4.4 4.4 0 10-8.8 0v4.8L6 17zm4 3h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 4.5h8V10a4 4 0 01-8 0V4.5zM8 6.5H5V8a3 3 0 003 3M16 6.5h3V8a3 3 0 01-3 3M12 14v4M8.5 20h7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3zM19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8L19 16z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><path d="M7 11V8a5 5 0 0110 0v3M5.5 11h13v9h-13z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 12a8 8 0 10-2.4 5.7M20 5v5h-5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-pc" viewBox="0 0 24 24"><path d="M3.5 5h17v11h-17zM9 20h6M12 16v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3L5 13.5h6L10 21l8-10.5h-6L13 3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-chev"viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="ComboLive, inicio">
+      <img src="assets/logo.svg" width="197" height="34" alt="ComboLive" decoding="async">
+    </a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="#funciones">Funciones</a>
+      <a href="#como">Cómo funciona</a>
+      <a href="#editor">Editor</a>
+      <a href="#privacidad">Privacidad</a>
+      <a href="#faq">Preguntas</a>
+    </nav>
+    <a class="btn btn-sm" data-dl href="#descargar" aria-disabled="true"><svg class="i" aria-hidden="true"><use href="#i-dl"/></svg><span class="dl-label">Descargar</span></a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="aurora" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="pill"><span class="dot" aria-hidden="true"></span>Para Windows 10 y 11 · se actualiza sola</p>
+      <h1>Todo tu directo en un combo.</h1>
+      <p class="lead"><b>Alertas · Tops · Interacciones · Metas</b>, en una sola app para Windows. Overlays para OBS que reaccionan en tiempo real a <b>TikTok LIVE</b>, <b>Kick</b> y <b>Twitch</b>, con un panel visual y sin escribir código.</p>
+      <div class="cta-row">
+        <a id="dl" class="btn btn-xl" data-dl href="#descargar" aria-disabled="true"><svg class="i" aria-hidden="true"><use href="#i-dl"/></svg><span class="dl-label">Descargar para Windows</span><span class="shine" aria-hidden="true"></span></a>
+        <a class="btn-ghost" href="#como">Ver cómo funciona</a>
+      </div>
+      <p class="hero-meta" id="meta-hero" aria-live="polite">Buscando la última versión…</p>
+    </div>
+
+    <div class="stage-wrap" data-live>
+      <div class="stage" id="stage" role="img" aria-label="Maqueta animada: un teléfono vertical y un monitor horizontal mostrando alertas de regalos, un ranking que se reordena, una barra de meta que se llena y un contador de combo.">
+        <div class="glow" aria-hidden="true"></div>
+        <!-- capas apiladas: la metáfora "combo" (overlay sobre overlay) -->
+        <div class="ghost g1" aria-hidden="true"></div><div class="ghost g2" aria-hidden="true"></div>
+
+        <!-- Monitor 16:9 (Kick / Twitch) -->
+        <div class="monitor" aria-hidden="true">
+          <div class="screen" data-surface="h">
+            <div class="scr-bg"></div>
+            <div class="ov-alert"><span class="gift">🎁</span><span class="txt"><b>Ana</b> envió <b>Galaxy</b> ×3 · 1.200 🪙</span></div>
+            <div class="ov-combo"><small>Combo</small><strong class="cmb">×8</strong></div>
+            <div class="ov-rank">
+              <div class="rk-h">Top de la sesión</div>
+              <ol class="rk-list" id="rank">
+                <li class="rk" style="--i:0" data-u="0"><span class="pos">1</span><span class="av" style="--h:268"></span><span class="nm">Ana</span><span class="sc">4.200</span></li>
+                <li class="rk" style="--i:1" data-u="1"><span class="pos">2</span><span class="av" style="--h:330"></span><span class="nm">Leo</span><span class="sc">3.600</span></li>
+                <li class="rk" style="--i:2" data-u="2"><span class="pos">3</span><span class="av" style="--h:200"></span><span class="nm">Mía</span><span class="sc">3.100</span></li>
+                <li class="rk" style="--i:3" data-u="3"><span class="pos">4</span><span class="av" style="--h:40"></span><span class="nm">Kai</span><span class="sc">2.500</span></li>
+                <li class="rk" style="--i:4" data-u="4"><span class="pos">5</span><span class="av" style="--h:150"></span><span class="nm">Noa</span><span class="sc">1.700</span></li>
+              </ol>
+            </div>
+            <div class="ov-goal"><div class="g-top"><span>Meta del directo</span><span class="g-pct">72%</span></div><div class="g-bar"><i class="g-fill"></i></div></div>
+            <div class="fx" data-hearts="5"></div>
+            <div class="fx cf-box" data-confetti="18"></div>
+          </div>
+          <div class="mon-stand"></div>
+        </div>
+
+        <!-- Teléfono vertical (TikTok) -->
+        <div class="phone" aria-hidden="true">
+          <div class="screen" data-surface="v">
+            <div class="scr-bg scr-bg-v"><span class="face"></span></div>
+            <span class="live-chip">En vivo</span>
+            <div class="ov-alert"><span class="gift">🎁</span><span class="txt"><b>Ana</b> envió <b>Galaxy</b> ×3 · 1.200 🪙</span></div>
+            <div class="ov-combo"><small>Combo</small><strong class="cmb">×8</strong></div>
+            <div class="ov-goal"><div class="g-top"><span>Meta</span><span class="g-pct">72%</span></div><div class="g-bar"><i class="g-fill"></i></div></div>
+            <div class="fx" data-hearts="6"></div>
+            <div class="fx cf-box" data-confetti="20"></div>
+          </div>
+          <span class="notch"></span>
+        </div>
+      </div>
+      <p class="stage-cap">Maqueta ilustrativa · izquierda, overlay vertical (TikTok) · derecha, horizontal (Kick y Twitch)</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PLATAFORMAS ============ -->
+<section class="plat" aria-label="Plataformas compatibles">
+  <div class="wrap plat-in">
+    <p>Lee tu directo en</p>
+    <ul>
+      <li><span class="tag t1">TikTok LIVE</span></li>
+      <li><span class="tag t2">Kick</span></li>
+      <li><span class="tag t3">Twitch</span></li>
+    </ul>
+    <p class="plat-note">Overlays verticales 1080×1920 y horizontales 1920×1080.</p>
+  </div>
+</section>
+
+<!-- ============ FUNCIONES ============ -->
+<section class="sec" id="funciones">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Varias apps en una, apiladas como un combo.</h2>
+      <p>Cada overlay es una dirección local que añades a OBS como fuente de navegador. Tú decides qué se ve y cómo.</p>
+    </div>
+
+    <div class="cards" data-live>
+      <article class="card c-alert reveal">
+        <div class="demo demo-alert" aria-hidden="true">
+          <div class="pa pa1"><i class="pa-ico">🎁</i><span><b>Ana</b> envió <b>Galaxy</b> ×3</span></div>
+          <div class="pa pa2"><i class="pa-ico">⭐</i><span><b>Leo</b> es nuevo suscriptor</span></div>
+          <div class="pa pa3"><i class="pa-ico">🚀</i><span><b>Mía</b> llega con 24 espectadores</span></div>
+          <div class="themes"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <img class="shot" src="assets/screens/alertas.png" width="1200" height="800" alt="Captura real de las alertas de ComboLive" loading="lazy" decoding="async" onload="this.classList.add('ok')" onerror="this.remove()">
+        </div>
+        <h3><svg class="i" aria-hidden="true"><use href="#i-bell"/></svg>Alertas</h3>
+        <p>Regalos, seguidores, suscripciones y raids. 12 animaciones, 6 temas, sonido y vídeo, con vista previa en vivo antes de salir al aire.</p>
+      </article>
+
+      <article class="card c-top reveal">
+        <div class="demo demo-top" aria-hidden="true">
+          <div class="tabs"><span>Sesión</span><span>Día</span><span>Semana</span><span>Mes</span><span>Total</span><i class="tab-pill"></i></div>
+          <div class="podium">
+            <div class="pd pd2"><b>Leo</b><i></i></div>
+            <div class="pd pd1"><b>Ana</b><i></i></div>
+            <div class="pd pd3"><b>Mía</b><i></i></div>
+          </div>
+          <img class="shot" src="assets/screens/tops.png" width="1200" height="800" alt="Captura real de los tops de ComboLive" loading="lazy" decoding="async" onload="this.classList.add('ok')" onerror="this.remove()">
+        </div>
+        <h3><svg class="i" aria-hidden="true"><use href="#i-trophy"/></svg>Tops y metas</h3>
+        <p>Rankings por sesión, día, semana, mes o total, en podio o en lista. Metas con barra o anillo y contadores que se mueven solos.</p>
+      </article>
+
+      <article class="card c-inter reveal">
+        <div class="demo demo-inter" aria-hidden="true">
+          <div class="burst"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="poll">
+            <div class="pl"><span>Opción A</span><div class="pb"><i class="pbA"></i></div></div>
+            <div class="pl"><span>Opción B</span><div class="pb"><i class="pbB"></i></div></div>
+          </div>
+          <div class="combo-chip">Combo <b>×5</b></div>
+        </div>
+        <h3><svg class="i" aria-hidden="true"><use href="#i-spark"/></svg>Interacciones</h3>
+        <p>Confeti, fuegos artificiales, corazones flotando, combos de regalos, encuestas por chat y banners para que el chat sienta que importa.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CÓMO FUNCIONA ============ -->
+<section class="sec sec-alt" id="como">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>De la descarga al directo en tres pasos.</h2>
+      <p>Sin permisos de administrador y sin tocar código.</p>
+    </div>
+    <ol class="steps" data-live>
+      <li class="step reveal">
+        <div class="mini mini-install" aria-hidden="true">
+          <div class="win"><div class="win-bar"><i></i><i></i><i></i></div><div class="win-body"><span class="mi-t">Instalando…</span><div class="bar"><i class="bar-f"></i></div><span class="mi-ok"><svg class="i"><use href="#i-check"/></svg> Listo</span></div></div>
+        </div>
+        <h3><span class="num">1</span>Instala</h3>
+        <p>Descarga el instalador y ábrelo. Se instala solo para tu usuario, sin administrador.</p>
+      </li>
+      <li class="step reveal">
+        <div class="mini mini-conn" aria-hidden="true">
+          <div class="chip"><span>TikTok LIVE</span><i class="st"></i></div>
+          <div class="chip"><span>Kick</span><i class="st"></i></div>
+          <div class="chip"><span>Twitch</span><i class="st"></i></div>
+        </div>
+        <h3><span class="num">2</span>Conecta</h3>
+        <p>En <b>Conexiones</b> enlaza tus plataformas. Verás los eventos de tu directo en tiempo real.</p>
+      </li>
+      <li class="step reveal">
+        <div class="mini mini-url" aria-hidden="true">
+          <div class="url-lbl">Fuente de navegador · URL</div>
+          <div class="url-box"><span class="url-t">http://localhost:…/alertas</span><i class="caret"></i></div>
+          <div class="url-ok"><svg class="i"><use href="#i-check"/></svg> Overlay en escena</div>
+        </div>
+        <h3><span class="num">3</span>Pega la URL en OBS</h3>
+        <p>En <b>URLs para OBS</b> copia la de cada overlay y pégala en una fuente <i>Navegador</i>.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ EDITOR ============ -->
+<section class="sec" id="editor">
+  <div class="wrap editor-grid">
+    <div class="sec-head left reveal">
+      <h2>Un editor visual, sin código.</h2>
+      <p>Cambia el tema, la animación y el sonido y mira el resultado al instante, antes de que lo vea tu audiencia. Prueba la maqueta: es interactiva.</p>
+      <ul class="ticks">
+        <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Vista previa en vivo de cada alerta</li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>12 animaciones y 6 temas para alertas</li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Sonido y vídeo en cada evento</li>
+      </ul>
+    </div>
+
+    <div class="panel reveal" id="panel" data-live data-theme="0" data-anim="bounce">
+      <div class="p-bar"><i></i><i></i><i></i><span>ComboLive · Alertas</span></div>
+      <div class="p-body">
+        <!-- Hueco opcional: captura real 1600x1000. Si el archivo no existe, se quita y se ve la maqueta CSS. -->
+        <img class="shot" src="assets/screens/panel.png" width="1600" height="1000" alt="Captura real del panel de ComboLive" loading="lazy" decoding="async" onload="this.classList.add('ok')" onerror="this.remove()">
+        <ul class="p-side" aria-hidden="true">
+          <li class="on">Alertas</li><li>Tops</li><li>Metas</li><li>Contadores</li><li>Interacciones</li><li>Conexiones</li><li>URLs para OBS</li>
+        </ul>
+        <div class="p-main">
+          <div class="pv" id="pv">
+            <div class="pv-bg"></div>
+            <div class="ov-alert pv-alert"><span class="gift">🎁</span><span class="txt"><b>Ana</b> envió <b>Galaxy</b> ×3 · 1.200 🪙</span></div>
+          </div>
+          <div class="p-ctl">
+            <fieldset class="grp"><legend>Tema</legend>
+              <div class="sw" role="group" aria-label="Tema de la alerta">
+                <button type="button" class="s s0" data-theme="0" aria-pressed="true" aria-label="Tema violeta y rosa"></button>
+                <button type="button" class="s s1" data-theme="1" aria-pressed="false" aria-label="Tema océano"></button>
+                <button type="button" class="s s2" data-theme="2" aria-pressed="false" aria-label="Tema menta"></button>
+                <button type="button" class="s s3" data-theme="3" aria-pressed="false" aria-label="Tema ámbar"></button>
+                <button type="button" class="s s4" data-theme="4" aria-pressed="false" aria-label="Tema rojo"></button>
+                <button type="button" class="s s5" data-theme="5" aria-pressed="false" aria-label="Tema monocromo"></button>
+              </div>
+            </fieldset>
+            <fieldset class="grp"><legend>Animación</legend>
+              <div class="seg" role="group" aria-label="Animación de entrada">
+                <button type="button" data-anim="bounce" aria-pressed="true">Rebote</button>
+                <button type="button" data-anim="zoom" aria-pressed="false">Zoom</button>
+                <button type="button" data-anim="slide" aria-pressed="false">Deslizar</button>
+                <button type="button" data-anim="flip" aria-pressed="false">Giro</button>
+              </div>
+            </fieldset>
+            <button type="button" class="btn btn-sm btn-test" id="pv-test">Probar alerta</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACTUALIZACIONES ============ -->
+<section class="sec sec-alt" id="actualizaciones">
+  <div class="wrap upd-grid">
+    <div class="sec-head left reveal">
+      <h2>Se actualiza sola, pero te pregunta antes.</h2>
+      <p>La app comprueba si hay una versión nueva, te avisa y no instala nada hasta que tú lo decides. Tampoco tienes que volver a esta página: siempre puedes descargar a mano desde aquí.</p>
+    </div>
+    <div class="upd reveal" data-live>
+      <div class="upd-win" aria-hidden="true">
+        <div class="win-bar"><i></i><i></i><i></i><span>ComboLive</span></div>
+        <div class="upd-body">
+          <div class="skel"><i></i><i></i><i></i></div>
+          <div class="toast">
+            <div class="t-a">
+              <svg class="i"><use href="#i-refresh"/></svg>
+              <div><b>Nueva versión disponible</b><span>¿Quieres actualizar ahora?</span></div>
+              <span class="t-btn">Descargar ahora</span>
+            </div>
+            <div class="t-b">
+              <svg class="i"><use href="#i-dl"/></svg>
+              <div><b>Descargando actualización…</b><div class="bar"><i class="bar-f"></i></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="sr-only">Ilustración: aparece el aviso Nueva versión disponible, se pulsa Descargar ahora y se muestra el progreso de la descarga.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRIVACIDAD ============ -->
+<section class="sec" id="privacidad">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Privado por diseño.</h2>
+      <p>Todo ocurre en tu ordenador. No hay cuenta que crear ni panel en la nube.</p>
+    </div>
+    <div class="priv" data-live>
+      <div class="flow reveal" aria-hidden="true">
+        <div class="node n-plat"><b>Plataformas</b><span>TikTok · Kick · Twitch</span></div>
+        <div class="wire"></div>
+        <div class="node n-pc"><svg class="i"><use href="#i-pc"/></svg><b>Tu PC</b><span>App · servidor local · datos</span></div>
+        <div class="wire"></div>
+        <div class="node n-obs"><b>OBS</b><span>en tu PC</span></div>
+      </div>
+      <ul class="priv-list">
+        <li class="reveal"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg><div><h3>Sin cuenta</h3><p>Instalas, conectas tus plataformas y listo. No hace falta registrarse.</p></div></li>
+        <li class="reveal"><svg class="i" aria-hidden="true"><use href="#i-pc"/></svg><div><h3>Datos en tu PC</h3><p>Configuración, rankings y metas se guardan en tu equipo, no en un servidor ajeno.</p></div></li>
+        <li class="reveal"><svg class="i" aria-hidden="true"><use href="#i-bolt"/></svg><div><h3>Servidor local</h3><p>El servidor que entrega los overlays a OBS corre en tu propio ordenador. Para avisarte de actualizaciones, la app consulta las versiones publicadas en GitHub.</p></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DESCARGA ============ -->
+<section class="sec sec-dl" id="descargar">
+  <div class="aurora aurora-2" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Descarga ComboLive.</h2>
+      <p>Instalador para Windows 10 y 11 (64 bits). Por ahora solo Windows.</p>
+    </div>
+
+    <div class="dl-grid">
+      <div class="dl-card reveal">
+        <div class="dl-top">
+          <img src="icon.png" width="64" height="64" alt="" decoding="async">
+          <div>
+            <h3>ComboLive</h3>
+            <p class="dl-ver" id="ver">Última versión</p>
+          </div>
+        </div>
+        <a id="dl2" class="btn btn-xl btn-block" data-dl href="#descargar" aria-disabled="true"><svg class="i" aria-hidden="true"><use href="#i-dl"/></svg><span class="dl-label">Descargar para Windows</span><span class="shine" aria-hidden="true"></span></a>
+        <p class="meta" id="meta" aria-live="polite">Buscando la última versión…</p>
+        <ul class="reqs">
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Windows 10 u 11, 64 bits</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>No pide permisos de administrador</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Vive en la bandeja y puede iniciar con Windows</li>
+        </ul>
+        <section id="notes-box" class="notes" hidden>
+          <h4>Novedades de esta versión</h4>
+          <pre id="notes"></pre>
+        </section>
+        <details class="hist">
+          <summary>Versiones anteriores<svg class="i" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+          <div id="history">Cargando…</div>
+        </details>
+        <p class="all"><a id="allrel" href="#">Ver todas las versiones en GitHub</a></p>
+      </div>
+
+      <div class="sm reveal" data-live>
+        <h3>Si Windows muestra «Windows protegió su PC»</h3>
+        <p class="sm-lead">Es normal la primera vez. El instalador todavía <b>no tiene firma digital</b> (la firma de código es de pago), así que SmartScreen avisa de que no reconoce al editor. No significa que el archivo esté dañado. Estos son los pasos:</p>
+        <ol class="sm-steps">
+          <li>
+            <div class="dlg" aria-hidden="true">
+              <b class="dlg-t">Windows protegió su PC</b>
+              <span class="dlg-p">Microsoft Defender SmartScreen impidió el inicio de una aplicación no reconocida.</span>
+              <span class="dlg-link hl">Más información</span>
+              <span class="dlg-btn">No ejecutar</span>
+            </div>
+            <p><b>1.</b> Pulsa <b>Más información</b>.</p>
+          </li>
+          <li>
+            <div class="dlg" aria-hidden="true">
+              <b class="dlg-t">Windows protegió su PC</b>
+              <span class="dlg-p">Aplicación: <i>instalador de ComboLive</i></span>
+              <span class="dlg-row"><span class="dlg-btn hl2">Ejecutar de todas formas</span><span class="dlg-btn">No ejecutar</span></span>
+            </div>
+            <p><b>2.</b> Pulsa <b>Ejecutar de todas formas</b>.</p>
+          </li>
+          <li>
+            <div class="dlg dlg-ok" aria-hidden="true">
+              <b class="dlg-t">Instalando…</b>
+              <div class="bar"><i class="bar-f"></i></div>
+              <span class="dlg-p">Sin administrador.</span>
+            </div>
+            <p><b>3.</b> Sigue el instalador y listo.</p>
+          </li>
+        </ol>
+        <p class="sm-tip"><b>¿Quieres comprobarlo?</b> Si la línea de arriba muestra una huella <code>sha256</code>, compárala con la de tu archivo: en PowerShell, <code>Get-FileHash .\ComboLive-Setup-&lt;versión&gt;.exe</code>. Solo descarga desde esta página o desde las Releases oficiales de este repositorio. Ilustración aproximada del aviso de Windows.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sec" id="faq">
+  <div class="wrap faq-wrap">
+    <div class="sec-head reveal">
+      <h2>Preguntas frecuentes</h2>
+    </div>
+    <div class="faq reveal">
+      <details>
+        <summary>¿Es segura?<svg class="i" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+        <div class="ans"><p>Es software de uso personal y los datos se quedan en tu PC. Lo que sí debes saber: el instalador aún no está firmado, por eso Windows SmartScreen puede avisarte (arriba tienes el paso a paso). Si hay huella SHA-256, puedes comprobarla; y descarga siempre desde esta página o desde las Releases oficiales de este repositorio.</p></div>
+      </details>
+      <details>
+        <summary>¿Pide permisos de administrador?<svg class="i" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+        <div class="ans"><p>No. Se instala para tu usuario de Windows sin necesidad de ser administrador.</p></div>
+      </details>
+      <details>
+        <summary>¿Funciona en Mac o Linux?<svg class="i" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+        <div class="ans"><p>No, por ahora solo funciona en Windows 10 y 11 de 64 bits.</p></div>
+      </details>
+      <details>
+        <summary>¿Necesito crear una cuenta?<svg class="i" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+        <div class="ans"><p>No. Instalas la app, conectas tus plataformas y ya puedes usarla.</p></div>
+      </details>
+      <details>
+        <summary>¿Cómo se actualiza?<svg class="i" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+        <div class="ans"><p>La app consulta las versiones publicadas en GitHub, te avisa cuando hay una nueva y te pregunta antes de instalarla. Si prefieres hacerlo a mano, descarga el último instalador desde esta página.</p></div>
+      </details>
+      <details>
+        <summary>¿Las conexiones con TikTok y Kick son oficiales?<svg class="i" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+        <div class="ans"><p>No del todo. Para TikTok LIVE y para el chat de Kick se usan conexiones no oficiales, que pueden dejar de funcionar o cambiar sin aviso si la plataforma modifica algo. Si ocurre, la app tendría que adaptarse con una actualización. Conviene tenerlo en cuenta antes de depender de ellas en un directo importante.</p></div>
+      </details>
+      <details>
+        <summary>¿Dónde se guardan mis datos?<svg class="i" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+        <div class="ans"><p>En tu propio ordenador: configuración, rankings, metas y contadores. No hace falta una cuenta ni un servicio en la nube.</p></div>
+      </details>
+      <details>
+        <summary>¿De qué tamaño son los overlays y se queda abierta la app?<svg class="i" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+        <div class="ans"><p>Hay overlays verticales (1080×1920, pensados para TikTok) y horizontales (1920×1080, para Kick y Twitch). La app vive en la bandeja del sistema y puede iniciarse con Windows si lo activas.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div class="foot-brand"><img src="assets/logo.svg" width="197" height="34" alt="ComboLive" decoding="async"><span>Todo tu directo en un combo</span></div>
+    <nav class="foot-links" aria-label="Pie de página">
+      <a href="#descargar">Descargar</a>
+      <a href="#faq">Preguntas</a>
+      <a id="allrel2" href="#">Todas las versiones en GitHub</a>
+    </nav>
+    <p class="foot-note">Software de uso personal · todos los derechos reservados. TikTok, Kick y Twitch son marcas de sus respectivos propietarios; este proyecto no está afiliado a ellas ni respaldado por ellas.</p>
+  </div>
+</footer>
+
+<noscript><p class="ns">Activa JavaScript o descarga directamente desde la <a href="https://github.com/FARS1803/combolive/releases/latest">página de versiones</a>.</p></noscript>
+<script src="app.js" defer></script>
+</body>
+</html>

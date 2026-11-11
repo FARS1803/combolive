@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<defs>
+<linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7a6bff"/><stop offset="1" stop-color="#ff5fd0"/></linearGradient>
+<radialGradient id="a" cx="0.8" cy="0.1" r="0.7"><stop offset="0" stop-color="#8a7cff" stop-opacity=".55"/><stop offset="1" stop-color="#8a7cff" stop-opacity="0"/></radialGradient>
+<radialGradient id="b" cx="0.1" cy="1" r="0.7"><stop offset="0" stop-color="#ff5fd0" stop-opacity=".35"/><stop offset="1" stop-color="#ff5fd0" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1200" height="630" fill="#12131a"/>
+<rect width="1200" height="630" fill="url(#a)"/>
+<rect width="1200" height="630" fill="url(#b)"/>
+<!-- logo provisional: tres capas + chispa -->
+<g transform="translate(72 64) scale(1.1)"><rect x="14" y="6" width="36" height="26" rx="8" fill="url(#g)" opacity=".4"/><rect x="10" y="16" width="44" height="28" rx="9" fill="url(#g)" opacity=".7"/><rect x="6" y="26" width="52" height="30" rx="10" fill="url(#g)"/><path d="M47 6l3.2 9.3L59.5 18.5 50.2 21.7 47 31l-3.2-9.3L34.5 18.5l9.3-3.2z" fill="#fff" stroke="#14111f" stroke-width="2" stroke-linejoin="round"/></g>
+<g font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif">
+<text x="152" y="118" font-size="46" font-weight="800" fill="#f3f4fb">ComboLive</text>
+<text x="72" y="300" font-size="92" font-weight="800" fill="#f3f4fb">Todo tu directo</text>
+<text x="72" y="396" font-size="92" font-weight="800" fill="#f3f4fb">en un combo.</text>
+<text x="72" y="470" font-size="32" fill="#a3a7bf">Alertas · Tops · Interacciones · Metas, en una sola app</text>
+<rect x="72" y="520" width="330" height="62" rx="31" fill="url(#g)"/>
+<text x="237" y="561" font-size="28" font-weight="800" fill="#12121a" text-anchor="middle">Descargar para Windows</text>
+</g>
+<g transform="translate(830 150)" opacity=".4"><rect width="330" height="190" rx="18" fill="#1b1d29" stroke="#8a7cff" stroke-width="2"/></g>
+<g transform="translate(815 135)" opacity=".7"><rect width="330" height="190" rx="18" fill="#1b1d29" stroke="#8a7cff" stroke-width="2"/></g>
+<g transform="translate(800 120)">
+<rect width="330" height="190" rx="18" fill="#1b1d29" stroke="#2c3048" stroke-width="2"/>
+<rect x="24" y="24" width="282" height="56" rx="28" fill="#232640" stroke="#8a7cff" stroke-width="2"/>
+<circle cx="52" cy="52" r="16" fill="url(#g)"/>
+<text x="80" y="60" font-family="'Segoe UI',Arial,sans-serif" font-size="19" font-weight="700" fill="#fff">Ana envió Galaxy ×3</text>
+<rect x="24" y="108" width="282" height="14" rx="7" fill="#12131a"/>
+<rect x="24" y="108" width="196" height="14" rx="7" fill="url(#g)"/>
+<rect x="24" y="140" width="130" height="10" rx="5" fill="#2c3048"/>
+<rect x="24" y="160" width="90" height="10" rx="5" fill="#2c3048"/>
+</g>
+<g transform="translate(910 350)">
+<rect width="220" height="220" rx="26" fill="#1b1d29" stroke="#2c3048" stroke-width="2"/>
+<rect x="22" y="26" width="176" height="34" rx="10" fill="#232640"/>
+<rect x="22" y="72" width="176" height="34" rx="10" fill="#232640"/>
+<text x="110" y="190" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="68" font-weight="800" fill="#ff5fd0">×8</text>
+<text x="110" y="132" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="20" font-weight="700" fill="#d9dbee">Combo</text>
+</g>
+</svg>
